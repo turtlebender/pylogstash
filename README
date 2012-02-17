@@ -1,0 +1,9 @@
+This is a simple log handler which ships logs to a logstash node 
+via zeromq.  In order fo this to work, you must have a logstash node 
+for zeromq messages.
+
+This sends parsed messages in json form.  To specify fields to be added to the 
+event, set the field list in the handler initializer.  Each of these fields 
+from the LogRecord will be included in the @fields section of the event.
+
+The timestamp field is set via datetime.datetime.isoformat(). 
