@@ -30,8 +30,3 @@ class Handler(logging.Handler):
             "@message": self.format(record)
         }
         self.pub.send_json(message)
-
-
-log = logging.getLogger()
-log.addHandler(Handler(type="graph", fields=['levelname', 'filename', 'module', 'args', 'pathname']))
-log.warn("Test")
