@@ -7,3 +7,7 @@ event, set the field list in the handler initializer.  Each of these fields
 from the LogRecord will be included in the @fields section of the event.
 
 The timestamp field is set via datetime.datetime.isoformat(). 
+
+A fair amount of this code either came from or was inspired by:
+https://github.com/mozilla-services/metlog-py.  A major goal was
+to split this out from the metlog framework

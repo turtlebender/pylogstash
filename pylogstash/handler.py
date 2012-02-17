@@ -9,6 +9,7 @@ MAX_MESSAGES = 1000
 
 class Handler(logging.Handler):
     """ A logging handler for sending notifications to a 0mq PUSH.
+    
     """
     def __init__(self, connect_strings=['tcp://127.0.0.1:2120'], fields=[], type=None, context=None, queue_length=MAX_MESSAGES):
         logging.Handler.__init__(self)
