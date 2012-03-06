@@ -1,4 +1,4 @@
-This is a simple log handler which ships logs to a logstash node 
+This is a simple Python log handler which ships logs to a logstash node 
 via zeromq.  In order fo this to work, you must have a logstash node 
 for zeromq messages.
 
