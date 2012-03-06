@@ -1,0 +1,4 @@
+nose==1.1.2
+pylogstash==0.1
+pyzmq==2.1.11
+wsgiref==0.1.2
