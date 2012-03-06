@@ -8,9 +8,8 @@ from pylogstash import LogstashHandler
 def subscribe(queue):
     context = zmq.Context()
     socket = context.socket(zmq.SUB)
-    socket.bind("tcp://127.0.0.1:2120")
+    socket.bind("tcp://127.0.0.1:22222")
     socket.setsockopt(zmq.SUBSCRIBE, "")
-
     queue.put(socket.recv())
 
 
@@ -28,6 +27,7 @@ def test():
     import json
     message = json.loads(queue.get())
     assert message['@message'] == "hello"
+
 
 if __name__ == "__main__":
     test()

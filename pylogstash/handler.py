@@ -52,4 +52,5 @@ class Handler(logging.Handler):
             "@source_host": host,
             "@message": self.format(record)
         }
+        print("Shipping log")
         self.publisher.send_json(message)

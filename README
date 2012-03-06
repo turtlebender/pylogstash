@@ -6,6 +6,16 @@ This sends parsed messages in json form.  To specify fields to be added to the
 event, set the field list in the handler initializer.  Each of these fields 
 from the LogRecord will be included in the @fields section of the event.
 
+to configure:
+
+handler = LogstashHandler(connect_strings=['tcp://127.0.0.1:2120'], fields=["thread"])
+
+This will configure the handler to publish to 127.0.0.1 port 2120.  Multiple hosts can be specified.
+
+Every field listed in the fields parameter will be added to the @fields dictionary.  
+This should eliminate the need for grokking these entries in the logstash process (unless the log
+message itself needs to be grokked). These fields must be present in the LogRecord.
+
 The timestamp field is set via datetime.datetime.isoformat(). 
 
 A fair amount of this code either came from or was inspired by:
